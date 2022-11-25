@@ -11,6 +11,7 @@ pipeline {
     }
     triggers {
         // Poll source control periodically for changes.
+        //test me
         pollSCM 'H * * * *'
     }
     stages {
