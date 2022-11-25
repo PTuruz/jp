@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
 
 RUN git clone https://github.com/serilog/serilog-sinks-file
 
-ADD serilog-sinks-file .
+ADD serilog-sinks-file/ .
 
 COPY . .
 RUN dotnet restore
