@@ -12,7 +12,7 @@ pipeline {
     triggers {
         // Poll source control periodically for changes.
         //test me
-        pollSCM 'H * * * *'
+        pollSCM 'H/2 * * * *'
     }
     stages {
         stage('This is a test!') {
