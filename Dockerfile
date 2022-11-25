@@ -10,9 +10,9 @@ RUN apt-get update && apt-get install -y \
 
 RUN git clone https://github.com/serilog/serilog-sinks-file
 
-#ADD . .
+ADD serilog-sinks-file .
 
-COPY serilog-sinks-file .
+COPY . .
 RUN dotnet restore
 RUN dotnet build -f net5.0 -c Release src/Serilog.Sinks.File/Serilog.Sinks.File.csproj  -o /app/build
 
