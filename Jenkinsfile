@@ -14,11 +14,9 @@ pipeline {
         pollSCM 'H/2 * * * *'
     }
     stages {
-        stage('This is a test!') {
+        stage('This is a build !') {
             steps {
-                script {
-                    print 'Hello World!'
-                }
+                sh 'docker build -t simple .'
             }
         }
     }
