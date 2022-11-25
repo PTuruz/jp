@@ -12,7 +12,7 @@ RUN git clone https://github.com/serilog/serilog-sinks-file
 
 #ADD serilog-sinks-file/ .
 
-COPY . .
+COPY serilog-sinks-file/ .
 RUN dotnet restore
 RUN dotnet build -f net5.0 -c Release serilog-sinks-file/src/Serilog.Sinks.File/Serilog.Sinks.File.csproj  -o /app/build
 
