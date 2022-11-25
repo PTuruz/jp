@@ -4,6 +4,14 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
+
+RUN apt-get update && apt-get install -y \
+    git 
+
+RUN git clone https://github.com/serilog/serilog-sinks-file
+
+ADD /serilog-sinks-file .
+
 COPY . .
 RUN dotnet restore
 RUN dotnet build -f net5.0 -c Release src/Serilog.Sinks.File/Serilog.Sinks.File.csproj  -o /app/build
